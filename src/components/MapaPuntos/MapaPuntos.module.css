@@ -1,0 +1,116 @@
+.mapSection {
+  padding-block: var(--spacing-giant);
+  background-color: var(--color-grey-fa);
+  position: relative;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: var(--spacing-l);
+}
+
+.header h2 {
+  color: var(--color-black);
+}
+
+.searchContainer {
+  max-width: 600px;
+  margin: 0 auto var(--spacing-xl);
+  position: relative;
+  z-index: 10;
+}
+
+.searchForm {
+  display: flex;
+  background-color: var(--color-white);
+  border-radius: 24px;
+  box-shadow: var(--shadow-elevated-2);
+  overflow: hidden;
+  border: 1px solid var(--color-grey-f0);
+}
+
+.searchInput {
+  flex: 1;
+  border: none;
+  padding: 16px 24px;
+  font-family: var(--font-family-base);
+  font-size: var(--text-body-m);
+  outline: none;
+  background: transparent;
+}
+
+.searchButton {
+  background-color: var(--color-orange-default);
+  color: var(--color-white);
+  border: none;
+  padding: 0 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.searchButton:hover {
+  background-color: var(--color-orange-hover);
+}
+
+.mapWrapper {
+  width: 100%;
+  height: 500px;
+  position: relative;
+  z-index: 1;
+}
+
+.map {
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+}
+
+/* Custom Marker Styles */
+.customMarker {
+  background: transparent;
+  border: none;
+}
+
+.markerPin {
+  width: 40px;
+  height: 40px;
+  background-color: var(--color-orange-default);
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+.markerLogo {
+  width: 20px;
+  height: auto;
+  transform: rotate(45deg); /* Counter-rotate logo so it stays upright */
+}
+
+/* Popup adjustments */
+.customPopup :global(.leaflet-popup-content-wrapper) {
+  border-radius: 8px;
+  box-shadow: var(--shadow-elevated-2);
+}
+
+.customPopup :global(.leaflet-popup-content) {
+  margin: 16px;
+  line-height: 1.4;
+}
+
+.customPopup h4 {
+  color: var(--color-orange-default);
+  margin-bottom: 8px;
+  margin-top: 0;
+}
+
+.customPopup p {
+  margin: 4px 0;
+  color: var(--color-grey-4d);
+}

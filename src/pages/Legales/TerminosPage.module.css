@@ -1,0 +1,29 @@
+.page {
+  padding-top: 100px;
+  background-color: var(--color-white);
+  min-height: 100vh;
+}
+
+.contentSection {
+  padding-bottom: var(--spacing-xxl);
+}
+
+.legalBody {
+  background-color: var(--color-grey-fa);
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-l);
+  border: 1px solid var(--color-grey-d9);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+.legalSection h3 {
+  color: var(--color-black);
+}
+
+@media (max-width: 768px) {
+  .legalBody {
+    padding: var(--spacing-m);
+  }
+}

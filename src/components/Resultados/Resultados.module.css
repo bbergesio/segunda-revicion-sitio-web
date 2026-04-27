@@ -1,0 +1,74 @@
+.resultados {
+  padding-block: var(--spacing-giant);
+  background-color: var(--color-orange-default);
+  color: var(--color-white);
+}
+
+.header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto var(--spacing-xxl);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-xl);
+  margin-bottom: var(--spacing-xxl);
+}
+
+.column {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: var(--spacing-l);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.column h2 {
+  color: var(--color-white);
+  margin-bottom: var(--spacing-m);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: var(--spacing-xs);
+}
+
+.list {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-s);
+}
+
+.list li {
+  position: relative;
+  padding-left: var(--spacing-m);
+}
+
+.list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--color-white);
+  opacity: 0.8;
+}
+
+.ctaContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.ctaBtn {
+  background-color: var(--color-white);
+  color: var(--color-orange-default);
+}
+
+.ctaBtn:hover {
+  background-color: var(--color-grey-fa);
+  color: var(--color-orange-hover);
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

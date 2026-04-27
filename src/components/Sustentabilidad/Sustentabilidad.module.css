@@ -1,0 +1,69 @@
+.sustentabilidad {
+  padding-block: var(--spacing-xxl);
+  background-color: var(--color-white);
+}
+
+.banner {
+  display: block;
+  background: linear-gradient(135deg, var(--color-green-default) 0%, var(--color-green-hover) 100%);
+  border-radius: 24px;
+  padding: var(--spacing-xl) var(--spacing-xxl);
+  color: var(--color-white);
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: var(--shadow-elevated-2);
+}
+
+.banner:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-elevated-4);
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-l);
+}
+
+.text h2 {
+  margin-bottom: var(--spacing-xs);
+  color: var(--color-white);
+}
+
+.text p {
+  opacity: 0.9;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.banner:hover .icon {
+  transform: translateX(8px);
+  background: rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 768px) {
+  .banner {
+    padding: var(--spacing-l);
+  }
+  
+  .content {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--spacing-m);
+  }
+
+  .icon {
+    width: 48px;
+    height: 48px;
+  }
+}

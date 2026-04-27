@@ -1,0 +1,121 @@
+.contacto {
+  padding-block: var(--spacing-xxl);
+  background-color: var(--color-white);
+  position: relative;
+  overflow: hidden;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: var(--spacing-xxl);
+  align-items: center;
+}
+
+.info h2 {
+  color: var(--color-black);
+  margin-bottom: var(--spacing-s);
+}
+
+.info p {
+  color: var(--color-grey-4f);
+}
+
+.decoration {
+  margin-top: var(--spacing-l);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-s);
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background-color: var(--color-orange-default);
+  border-radius: 50%;
+}
+
+.line {
+  height: 2px;
+  width: 100px;
+  background: linear-gradient(to right, var(--color-orange-default), transparent);
+}
+
+.formCard {
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-xl);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-m);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.labelRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.charCount {
+  font-size: 10px;
+  color: var(--color-grey-97);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-m);
+}
+
+input, select, textarea {
+  padding: 12px 16px;
+  border: 1.5px solid var(--color-grey-d9);
+  border-radius: var(--radius-m);
+  font-family: inherit;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  background-color: var(--color-white);
+}
+
+input::placeholder, textarea::placeholder {
+  color: var(--color-grey-97);
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--color-orange-default);
+  box-shadow: 0 0 0 3px rgba(255, 108, 14, 0.1);
+}
+
+textarea {
+  resize: none;
+}
+
+@media (max-width: 992px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+  }
+  
+  .info {
+    text-align: center;
+  }
+  
+  .decoration {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+}

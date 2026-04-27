@@ -1,0 +1,72 @@
+.soluciones {
+  padding-block: var(--spacing-giant);
+  background-color: var(--color-grey-fa);
+}
+
+.header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto var(--spacing-xxl);
+}
+
+.header h2 {
+  color: var(--color-black);
+  margin-bottom: var(--spacing-m);
+}
+
+.header p {
+  color: var(--color-grey-4d);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-l);
+  margin-bottom: var(--spacing-xxl);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-s);
+  height: 100%;
+}
+
+.iconContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background-color: var(--color-orange-bg);
+  color: var(--color-orange-default);
+  margin-bottom: var(--spacing-xs);
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-m);
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .actions {
+    flex-direction: column;
+    padding-inline: var(--spacing-m);
+  }
+
+  .actions button {
+    width: 100%;
+  }
+}
