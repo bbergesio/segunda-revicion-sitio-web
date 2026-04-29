@@ -9,8 +9,8 @@ const Sustentabilidad = () => {
         <Link to="/sustentabilidad" className={styles.banner}>
           <div className={styles.content}>
             <div className={styles.text}>
-              <h2 className="headline-m">Somos parte del cambio.</h2>
-              <p className="body-l">Conocé nuestra estrategia 2030 y resultados ambientales.</p>
+              <h2 className="headline-m">Logística sustentable es posible.</h2>
+              <p className="body-m">Conocé nuestra estrategia 2030 herramientas y resultados ambientales.</p>
             </div>
             <div className={styles.icon}>
               <HiArrowRight size={32} />

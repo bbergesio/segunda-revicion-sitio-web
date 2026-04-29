@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { RiBuilding2Line, RiTruckLine, RiStore2Line, RiMapPinLine, RiFlashlightLine, RiFlashlightFill, RiRefund2Line } from 'react-icons/ri';
 import styles from './Soluciones.module.css';
 
@@ -63,8 +64,8 @@ const Soluciones = () => {
         </div>
 
         <div className={styles.actions}>
-          <button className="btn btn-primary">Emprendedores</button>
-          <button className="btn btn-secondary">Empresas</button>
+          <Link to="/emprendedores" className="btn btn-primary">Emprendedores</Link>
+          <Link to="/empresas" className="btn btn-secondary">Empresas</Link>
         </div>
       </div>
     </section>

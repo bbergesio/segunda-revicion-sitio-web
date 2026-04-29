@@ -18,7 +18,7 @@
 }
 
 .contentBox p {
-  color: var(--color-grey-4f);
+  color: var(--color-grey-4d);
   font-style: italic;
 }
 
@@ -31,7 +31,7 @@
 .vision {
   padding-block: var(--spacing-xxl);
   background-color: var(--color-grey-fa);
-  border-block: 1px solid var(--color-grey-d9);
+  border-block: 1px solid var(--color-grey-f0);
 }
 
 /* Valores */
@@ -60,7 +60,7 @@
 
 /* Equipo */
 .equipo {
-  padding-block: var(--spacing-xxl);
+  padding-block: var(--spacing-xxxl);
   background-color: var(--color-white);
 }
 
@@ -71,17 +71,22 @@
 }
 
 .teamGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: var(--spacing-l);
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .teamMember {
   position: relative;
+  flex: 0 0 calc(25% - var(--spacing-l)); /* 4 per row */
+  min-width: 260px;
   aspect-ratio: 4/5;
   overflow: hidden;
-  border-radius: var(--radius-l);
-  box-shadow: var(--shadow-m);
+  border-radius: 24px; /* User requested 24px */
+  box-shadow: var(--shadow-elevated-1);
 }
 
 .memberPhoto {
@@ -101,9 +106,33 @@
   right: var(--spacing-m);
   background-color: var(--color-orange-default);
   color: var(--color-white);
-  padding: 6px 16px;
-  border-radius: var(--radius-m);
-  box-shadow: var(--shadow-s);
+  padding: 8px 16px;
+  border-radius: 12px;
+  box-shadow: var(--shadow-elevated-1);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+.memberName {
+  font-size: 14px;
+  font-weight: var(--fw-black);
+  line-height: 1.2;
+  color: var(--color-white);
+  text-decoration: none;
+}
+
+.memberName:hover {
+  text-decoration: underline;
+}
+
+.memberRole {
+  font-size: 11px;
+  font-weight: var(--fw-regular);
+  opacity: 0.9;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .equipoFooter {
@@ -113,8 +142,24 @@
 }
 
 /* Responsive */
+@media (max-width: 1200px) {
+  .teamMember {
+    flex: 0 0 calc(33.333% - var(--spacing-l)); /* 3 per row */
+  }
+}
+
 @media (max-width: 992px) {
   .valoresGrid {
     grid-template-columns: 1fr;
+  }
+  
+  .teamMember {
+    flex: 0 0 calc(50% - var(--spacing-l)); /* 2 per row */
+  }
+}
+
+@media (max-width: 600px) {
+  .teamMember {
+    flex: 0 0 100%; /* 1 per row */
   }
 }

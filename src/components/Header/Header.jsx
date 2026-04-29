@@ -38,8 +38,8 @@ const Header = () => {
         {/* Desktop Navigation */}
         <nav className={styles.desktopNav}>
           <ul className={styles.navLinks}>
-            <li><NavLink to="/empresas" className={({ isActive }) => isActive ? `${styles.navLink} ${styles.active}` : styles.navLink}>Empresas</NavLink></li>
             <li><NavLink to="/emprendedores" className={({ isActive }) => isActive ? `${styles.navLink} ${styles.active}` : styles.navLink}>Emprendedores</NavLink></li>
+            <li><NavLink to="/empresas" className={({ isActive }) => isActive ? `${styles.navLink} ${styles.active}` : styles.navLink}>Empresas</NavLink></li>
             <li><NavLink to="/punto-pickit" className={({ isActive }) => isActive ? `${styles.navLink} ${styles.active}` : styles.navLink}>Punto pickit</NavLink></li>
             <li><NavLink to="/nosotros" className={({ isActive }) => isActive ? `${styles.navLink} ${styles.active}` : styles.navLink}>Nosotros</NavLink></li>
             <li><NavLink to="/blog" className={({ isActive }) => isActive ? `${styles.navLink} ${styles.active}` : styles.navLink}>Blog</NavLink></li>
@@ -61,8 +61,8 @@ const Header = () => {
       <div className={`${styles.mobileNav} ${isMobileMenuOpen ? styles.isOpen : ''}`}>
         <nav className={styles.mobileNavContent}>
           <ul className={styles.mobileNavLinks}>
-            <li><NavLink to="/empresas" className={({ isActive }) => isActive ? styles.active : ''} onClick={toggleMenu}>Empresas</NavLink></li>
             <li><NavLink to="/emprendedores" className={({ isActive }) => isActive ? styles.active : ''} onClick={toggleMenu}>Emprendedores</NavLink></li>
+            <li><NavLink to="/empresas" className={({ isActive }) => isActive ? styles.active : ''} onClick={toggleMenu}>Empresas</NavLink></li>
             <li><NavLink to="/punto-pickit" className={({ isActive }) => isActive ? styles.active : ''} onClick={toggleMenu}>Punto pickit</NavLink></li>
             <li><NavLink to="/nosotros" className={({ isActive }) => isActive ? styles.active : ''} onClick={toggleMenu}>Nosotros</NavLink></li>
             <li><NavLink to="/blog" className={({ isActive }) => isActive ? styles.active : ''} onClick={toggleMenu}>Blog</NavLink></li>

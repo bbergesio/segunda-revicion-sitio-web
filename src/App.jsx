@@ -16,6 +16,7 @@ import NosotrosPage from './pages/Nosotros/NosotrosPage';
 import PuntoPickitPage from './pages/PuntoPickit/PuntoPickitPage';
 import PrivacidadPage from './pages/Legales/PrivacidadPage';
 import TerminosPage from './pages/Legales/TerminosPage';
+import BlogPage from './pages/Blog/BlogPage';
 import Footer from './components/Footer/Footer';
 import './App.css';
 
@@ -46,6 +47,7 @@ function App() {
             <Route path="/emprendedores" element={<EmprendedoresPage />} />
             <Route path="/nosotros" element={<NosotrosPage />} />
             <Route path="/punto-pickit" element={<PuntoPickitPage />} />
+            <Route path="/blog" element={<BlogPage />} />
             <Route path="/privacidad" element={<PrivacidadPage />} />
             <Route path="/terminos" element={<TerminosPage />} />
           </Routes>

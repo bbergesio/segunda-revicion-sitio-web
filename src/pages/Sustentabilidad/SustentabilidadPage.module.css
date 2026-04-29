@@ -8,98 +8,85 @@
   text-align: center;
 }
 
-.hero p:first-child {
-  color: var(--color-green-default);
-  margin-bottom: var(--spacing-s);
-}
-
 .hero h1 {
   margin-bottom: var(--spacing-l);
-  color: var(--color-black);
+  
 }
 
-.hero p:last-child {
+.heroDescription {
   max-width: 800px;
-  margin: 0 auto;
+  margin: 0 auto var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-m);
   color: var(--color-grey-4d);
 }
 
-.pillars {
+.heroActions {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-m);
+}
+
+.cardsSection {
   padding-block: var(--spacing-xxxl);
   background-color: var(--color-white);
 }
 
-.grid {
+.cardsGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: var(--spacing-xl);
 }
 
-.pillar {
-  text-align: center;
+.card {
+  background: var(--color-grey-fa);
+  border-radius: 24px;
   padding: var(--spacing-xl);
   display: flex;
   flex-direction: column;
-  align-items: center;
+  gap: var(--spacing-m);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.icon {
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-elevated-2);
+}
+
+.card h2 {
   color: var(--color-green-default);
-  margin-bottom: var(--spacing-m);
 }
 
-.pillar h2 {
-  margin-bottom: var(--spacing-s);
-  color: var(--color-black);
-}
-
-.pillar p {
-  color: var(--color-grey-4d);
-}
-
-.results {
-  padding-block: var(--spacing-giant);
-  background-color: var(--color-grey-fa);
-}
-
-.resultsContent {
-  text-align: center;
-}
-
-.resultsContent h2 {
-  margin-bottom: var(--spacing-xxl);
-  color: var(--color-black);
-}
-
-.statsGrid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--spacing-xxl);
-}
-
-.stat {
+.cardContent {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-xs);
-}
-
-.number {
-  font-size: 4rem;
-  font-weight: var(--fw-extrabold);
-  color: var(--color-green-default);
-  line-height: 1;
-}
-
-.label {
-  font-size: var(--text-body-l);
+  gap: var(--spacing-s);
   color: var(--color-grey-4d);
-  max-width: 200px;
-  margin: 0 auto;
 }
 
-@media (max-width: 1024px) {
-  .grid, .statsGrid {
+@media (max-width: 992px) {
+  .cardsGrid {
     grid-template-columns: 1fr;
-    gap: var(--spacing-xl);
+  }
+}
+
+@media (max-width: 768px) {
+  .heroActions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .heroActions a {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .hero {
+    padding-block: var(--spacing-xl);
+  }
+  
+  .card {
+    padding: var(--spacing-l);
   }
 }

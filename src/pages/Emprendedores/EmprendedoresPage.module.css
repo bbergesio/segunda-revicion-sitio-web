@@ -120,7 +120,7 @@
 }
 
 .integrateCard {
-  background-color: var(--color-black);
+  background-color: var(--color-blue-secondary);
   color: var(--color-white);
   padding: var(--spacing-xxl);
   text-align: center;

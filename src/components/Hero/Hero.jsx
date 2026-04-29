@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styles from './Hero.module.css';
 
 const Hero = () => {
@@ -15,8 +16,8 @@ const Hero = () => {
         </p>
         
         <div className={`${styles.actions} animate-fade-in-up`} style={{ animationDelay: '0.3s' }}>
-          <button className="btn btn-primary btn-lg">Emprendedores</button>
-          <button className="btn btn-secondary btn-lg">Empresas</button>
+          <Link to="/emprendedores" className="btn btn-primary btn-lg">Emprendedores</Link>
+          <Link to="/empresas" className="btn btn-secondary btn-lg">Empresas</Link>
         </div>
       </div>
       

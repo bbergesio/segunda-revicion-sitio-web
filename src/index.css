@@ -192,28 +192,32 @@ button {
    ============================================================ */
 .headline-xxl {
   font-size: var(--text-headline-xxl);
-  font-weight: var(--fw-extrabold);
+  font-weight: var(--fw-black);
+  color: #6B6B6B;
   letter-spacing: var(--letter-spacing-base);
   line-height: 1.15;
 }
 
 .headline-xl {
   font-size: var(--text-headline-xl);
-  font-weight: var(--fw-extrabold);
+  font-weight: var(--fw-black);
+  color: #6B6B6B;
   letter-spacing: var(--letter-spacing-base);
   line-height: 1.2;
 }
 
 .headline-l {
   font-size: var(--text-headline-l);
-  font-weight: var(--fw-extrabold);
+  font-weight: var(--fw-black);
+  color: #6B6B6B;
   letter-spacing: var(--letter-spacing-base);
   line-height: 1.25;
 }
 
 .headline-m {
   font-size: var(--text-headline-m);
-  font-weight: var(--fw-extrabold);
+  font-weight: var(--fw-black);
+  color: #6B6B6B;
   letter-spacing: var(--letter-spacing-base);
   line-height: 1.3;
 }

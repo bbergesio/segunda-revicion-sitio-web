@@ -2,20 +2,22 @@ import Header from '../../components/Header/Header';
 import styles from './NosotrosPage.module.css';
 
 // Team Images
-import ceoImg from '../../assets/Equipo_pickit/CEO.webp';
-import cfoImg from '../../assets/Equipo_pickit/CFO.webp';
-import cooImg from '../../assets/Equipo_pickit/COO.webp';
-import ctoImg from '../../assets/Equipo_pickit/CTO.webp';
-import comercialImg from '../../assets/Equipo_pickit/Directora_comercial.webp';
-import marketplaceImg from '../../assets/Equipo_pickit/Marketplace_Director.webp';
+import ceoImg from '../../assets/Equipo_pickit/Facundo_CEO.webp';
+import cfoImg from '../../assets/Equipo_pickit/Javier_CFO.webp';
+import cooImg from '../../assets/Equipo_pickit/Micaela_COO.webp';
+import ctoImg from '../../assets/Equipo_pickit/Ricardo_CTO.webp';
+import ccoImg from '../../assets/Equipo_pickit/Sayuri_CCO.webp';
+import mpImg from '../../assets/Equipo_pickit/Belen_MP_Director.webp';
+import cpoImg from '../../assets/Equipo_pickit/Fernando_CPO.webp';
 
 const team = [
-  { img: ceoImg, role: "CEO" },
-  { img: cfoImg, role: "CFO" },
-  { img: cooImg, role: "COO" },
-  { img: ctoImg, role: "CTO" },
-  { img: comercialImg, role: "Directora Comercial" },
-  { img: marketplaceImg, role: "Marketplace Director" },
+  { img: ceoImg, name: "Facundo", role: "CEO", linkedin: "#" },
+  { img: cfoImg, name: "Javier", role: "CFO", linkedin: "#" },
+  { img: cpoImg, name: "Fernando", role: "CPO", linkedin: "#" },
+  { img: ctoImg, name: "Ricardo", role: "CTO", linkedin: "#" },
+  { img: cooImg, name: "Micaela", role: "COO", linkedin: "#" },
+  { img: ccoImg, name: "Sayuri", role: "CCO", linkedin: "#" },
+  { img: mpImg, name: "Belen", role: "Marketplace Director", linkedin: "#" },
 ];
 
 const NosotrosPage = () => {
@@ -77,16 +79,26 @@ const NosotrosPage = () => {
           <div className={styles.teamGrid}>
             {team.map((member, i) => (
               <div key={i} className={styles.teamMember}>
-                <img src={member.img} alt={member.role} className={styles.memberPhoto} />
+                <img src={member.img} alt={`${member.name} ${member.role}`} className={styles.memberPhoto} />
                 <div className={styles.roleLabel}>
-                  <span className="overline-s">{member.role}</span>
+                  <a 
+                    href={member.linkedin} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className={styles.memberName}
+                  >
+                    {member.name}
+                  </a>
+                  <div className={styles.memberRole}>{member.role}</div>
                 </div>
               </div>
             ))}
           </div>
 
           <div className={styles.equipoFooter}>
-            <button className="btn btn-primary">Quiero ser parte de pickit</button>
+            <a href="https://pickit.bamboohr.com/careers" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+              Quiero ser parte de pickit
+            </a>
           </div>
         </div>
       </section>

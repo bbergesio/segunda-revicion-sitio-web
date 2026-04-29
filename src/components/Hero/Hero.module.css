@@ -27,7 +27,6 @@
 }
 
 .title {
-  color: var(--color-black);
   margin-bottom: var(--spacing-l);
   max-width: 800px;
 }
