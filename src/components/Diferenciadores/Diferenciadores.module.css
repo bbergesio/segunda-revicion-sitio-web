@@ -1,6 +1,35 @@
+@keyframes gradientShift {
+  0%   { background-position: 20% 40%; }
+  12%  { background-position: 75% 15%; }
+  26%  { background-position: 55% 80%; }
+  40%  { background-position: 10% 55%; }
+  55%  { background-position: 85% 35%; }
+  68%  { background-position: 40% 90%; }
+  82%  { background-position: 65% 20%; }
+  100% { background-position: 20% 40%; }
+}
+
+@keyframes buildFrame {
+  0%   { opacity: 0; transform: scale(1.04); }
+  18%  { opacity: 1; transform: scale(1); }
+  27%  { opacity: 1; transform: scale(1); }
+  38%  { opacity: 0; transform: scale(1); }
+  100% { opacity: 0; transform: scale(1.04); }
+}
+
+@keyframes iconSink {
+  0%   { transform: scale(1);    box-shadow: 0 4px 12px rgba(255, 107, 0, 0.1); }
+  18%  { transform: scale(0.95); box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.06); }
+  27%  { transform: scale(0.95); box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.06); }
+  38%  { transform: scale(1);    box-shadow: 0 4px 12px rgba(255, 107, 0, 0.1); }
+  100% { transform: scale(1);    box-shadow: 0 4px 12px rgba(255, 107, 0, 0.1); }
+}
+
 .diferenciadores {
   padding-block: var(--spacing-giant);
-  background-color: #FFF0E7; /* Light orange background requested */
+  background: linear-gradient(135deg, #FFD4B5, #DDE8F5, #FDF6F0, #E4EEF8, #FFCBAA, #D6E5F3, #FFF4ED);
+  background-size: 400% 400%;
+  animation: gradientShift 16s ease-in-out infinite;
 }
 
 .header {
@@ -17,27 +46,55 @@
   color: var(--color-black);
 }
 
+
 .grid {
   display: flex;
-  flex-direction: row; /* Benefit side by side */
+  flex-direction: row;
   justify-content: space-between;
   gap: var(--spacing-l);
-  max-width: 1200px;
-  margin-inline: auto;
 }
 
-.item {
+.card {
   flex: 1;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: var(--spacing-m);
+  background-color: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(6px);
+  border-radius: 16px;
+  padding: var(--spacing-xl) var(--spacing-m);
+  box-shadow: 0 2px 12px rgba(200, 90, 0, 0.07);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 24px rgba(200, 90, 0, 0.13);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 18px;
+  border: 2px solid rgba(255, 150, 90, 0.55);
+  opacity: 0;
+  transform: scale(1.04);
+  animation: buildFrame 6s ease infinite;
+  pointer-events: none;
+  box-shadow: 0 0 10px rgba(255, 140, 70, 0.18);
+}
+
+.card:nth-child(1)::before { animation-delay: 0s; }
+.card:nth-child(2)::before { animation-delay: -4.5s; }
+.card:nth-child(3)::before { animation-delay: -3s; }
+.card:nth-child(4)::before { animation-delay: -1.5s; }
+
 .iconWrapper {
-  color: var(--color-orange-default); /* Changed to orange to match theme */
-  background-color: var(--color-white); /* White background for icons on light orange */
+  color: var(--color-orange-default);
+  background-color: var(--color-white);
   width: 70px;
   height: 70px;
   display: flex;
@@ -46,22 +103,27 @@
   border-radius: 50%;
   margin-bottom: var(--spacing-l);
   box-shadow: 0 4px 12px rgba(255, 107, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: iconSink 6s ease infinite;
 }
 
-.item:hover .iconWrapper {
-  transform: translateY(-8px) scale(1.05);
+.card:nth-child(1) .iconWrapper { animation-delay: 0s; }
+.card:nth-child(2) .iconWrapper { animation-delay: -4.5s; }
+.card:nth-child(3) .iconWrapper { animation-delay: -3s; }
+.card:nth-child(4) .iconWrapper { animation-delay: -1.5s; }
+
+.card:hover .iconWrapper {
+  transform: translateY(-4px) scale(1.05);
   box-shadow: 0 8px 20px rgba(255, 107, 0, 0.2);
 }
 
-.item h3 {
+.card h3 {
   color: var(--color-black);
   font-size: var(--text-headline-s);
   margin-bottom: var(--spacing-s);
   font-weight: 700;
 }
 
-.item p {
+.card p {
   color: var(--color-grey-4d);
   font-size: var(--text-body-m);
   line-height: 1.5;
@@ -72,20 +134,22 @@
     flex-wrap: wrap;
     justify-content: center;
   }
-  .item {
-    flex: 1 1 30%; /* 3 items per row on tablet */
-    max-width: 33%;
+  .card {
+    flex: 1 1 40%;
+    max-width: 48%;
   }
 }
 
 @media (max-width: 768px) {
+  .gradientBox {
+    padding: var(--spacing-l) var(--spacing-m);
+  }
   .grid {
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
   }
-  .item {
+  .card {
     flex: 1 1 100%;
     max-width: 100%;
-    padding-bottom: var(--spacing-xl);
   }
 }

@@ -35,7 +35,7 @@ const Diferenciadores = () => {
 
         <div className={styles.grid}>
           {diferencias.map((item, index) => (
-            <div key={index} className={styles.item}>
+            <div key={index} className={styles.card}>
               <div className={styles.iconWrapper}>
                 {item.icon}
               </div>
