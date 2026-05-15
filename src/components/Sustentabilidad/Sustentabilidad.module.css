@@ -1,0 +1,63 @@
+.sustentabilidad {
+  padding-block: var(--spacing-xxl);
+  background-color: var(--color-white);
+}
+
+.banner {
+  position: relative;
+  border-radius: 32px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.bannerImage {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.cta {
+  position: absolute;
+  bottom: 22%;
+  left: 4.5%;
+  background-color: var(--color-white);
+  color: var(--color-black);
+  padding: 12px 32px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 15px;
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+}
+
+@media (max-width: 1024px) {
+  .banner {
+    border-radius: 24px;
+  }
+
+  .cta {
+    bottom: 18%;
+    left: 5%;
+    padding: 10px 24px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .banner {
+    border-radius: 16px;
+  }
+
+  .cta {
+    bottom: 12%;
+    left: 5%;
+    padding: 8px 18px;
+    font-size: 13px;
+  }
+}

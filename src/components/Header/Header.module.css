@@ -1,0 +1,145 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: transparent;
+  transition: all 0.3s ease;
+  padding-block: var(--spacing-m);
+}
+
+.scrolled {
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-m);
+  padding-block: var(--spacing-s);
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 32px;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.desktopNav {
+  display: block;
+}
+
+.navLinks {
+  display: flex;
+  gap: var(--spacing-l);
+  list-style: none;
+}
+
+.navLink {
+  text-decoration: none;
+  
+  font-weight: 500;
+  font-size: 15px;
+  transition: color 0.3s ease;
+}
+
+.navLink:hover,
+.navLink.active {
+  color: var(--color-orange-default);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-m);
+}
+
+.ctaBtnSm {
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 8px;
+  min-width: auto;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobileToggle {
+  display: none;
+  background: none;
+  border: none;
+  
+  cursor: pointer;
+  padding: 4px;
+}
+
+/* Mobile Nav Drawer */
+.mobileNav {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--color-white);
+  z-index: 1001;
+  transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.isOpen {
+  right: 0;
+}
+
+.mobileNavContent {
+  padding: 100px var(--spacing-l) var(--spacing-l);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobileNavLinks {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-l);
+}
+
+.mobileNavLinks a {
+  text-decoration: none;
+  
+  font-size: 24px;
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+
+.mobileNavLinks a.active {
+  color: var(--color-orange-default);
+}
+
+.mobileNavFooter {
+  margin-top: auto;
+  padding-top: var(--spacing-xl);
+}
+
+@media (max-width: 992px) {
+  .desktopNav {
+    display: none;
+  }
+  
+  .mobileToggle {
+    display: block;
+  }
+}

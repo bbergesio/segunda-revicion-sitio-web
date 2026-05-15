@@ -1,0 +1,165 @@
+.page {
+  padding-top: 80px;
+}
+
+.contentBox {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contentBox h4 {
+  color: var(--color-orange-default);
+  margin-bottom: var(--spacing-s);
+}
+
+.contentBox h2 {
+  margin-bottom: var(--spacing-m);
+}
+
+.contentBox p {
+  color: var(--color-grey-4d);
+  font-style: italic;
+}
+
+/* Misión & Visión alternating */
+.mision {
+  padding-block: var(--spacing-xxl);
+  background-color: var(--color-white);
+}
+
+.vision {
+  padding-block: var(--spacing-xxl);
+  background-color: var(--color-grey-fa);
+  border-block: 1px solid var(--color-grey-f0);
+}
+
+/* Valores */
+.valores {
+  padding-block: var(--spacing-xxl);
+  text-align: center;
+}
+
+.valoresTitle {
+  margin-bottom: var(--spacing-xl);
+}
+
+.valoresGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-l);
+}
+
+.valorCard {
+  padding: var(--spacing-xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 4px solid var(--color-orange-default);
+}
+
+/* Equipo */
+.equipo {
+  padding-block: var(--spacing-xxxl);
+  background-color: var(--color-white);
+}
+
+.equipoHeader {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto var(--spacing-xxl);
+}
+
+.teamGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--spacing-l);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.teamMember {
+  position: relative;
+  flex: 0 0 calc(25% - var(--spacing-l)); /* 4 per row */
+  min-width: 260px;
+  aspect-ratio: 4/5;
+  overflow: hidden;
+  border-radius: 24px; /* User requested 24px */
+  box-shadow: var(--shadow-elevated-1);
+}
+
+.memberPhoto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.teamMember:hover .memberPhoto {
+  transform: scale(1.05);
+}
+
+.roleLabel {
+  position: absolute;
+  bottom: var(--spacing-m);
+  right: var(--spacing-m);
+  background-color: var(--color-orange-default);
+  color: var(--color-white);
+  padding: 8px 16px;
+  border-radius: 12px;
+  box-shadow: var(--shadow-elevated-1);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+.memberName {
+  font-size: 14px;
+  font-weight: var(--fw-black);
+  line-height: 1.2;
+  color: var(--color-white);
+  text-decoration: none;
+}
+
+.memberName:hover {
+  text-decoration: underline;
+}
+
+.memberRole {
+  font-size: 11px;
+  font-weight: var(--fw-regular);
+  opacity: 0.9;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.equipoFooter {
+  margin-top: var(--spacing-xxl);
+  display: flex;
+  justify-content: center;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .teamMember {
+    flex: 0 0 calc(33.333% - var(--spacing-l)); /* 3 per row */
+  }
+}
+
+@media (max-width: 992px) {
+  .valoresGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .teamMember {
+    flex: 0 0 calc(50% - var(--spacing-l)); /* 2 per row */
+  }
+}
+
+@media (max-width: 600px) {
+  .teamMember {
+    flex: 0 0 100%; /* 1 per row */
+  }
+}

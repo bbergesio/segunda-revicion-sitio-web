@@ -1,0 +1,79 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: 80px;
+  overflow: hidden;
+  background-color: var(--color-white);
+  z-index: 1;
+}
+
+.container {
+  position: relative;
+  max-width: 1200px; /* Wider to allow the title to spread */
+  margin: 0 auto;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cursor {
+  display: inline-block;
+  color: var(--color-orange-default);
+  font-weight: 300;
+  margin-left: 2px;
+  width: 2px;
+  animation: blink 0.8s step-end infinite;
+}
+
+@keyframes blink {
+  from, to { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* ============================================================
+   REST OF STYLES
+   ============================================================ */
+
+.overline { color: var(--color-orange-default); margin-bottom: var(--spacing-m); }
+
+.title { 
+  margin-bottom: var(--spacing-l); 
+  width: 100%; /* Take full container width */
+  max-width: 1200px; 
+  color: var(--color-black); 
+  line-height: 1.1; /* Tighter line height for the two lines */
+}
+
+.highlight { color: var(--color-orange-default); }
+.description { color: var(--color-grey-4d); margin-bottom: var(--spacing-xl); }
+.actions { display: flex; flex-wrap: wrap; gap: var(--spacing-m); justify-content: center; }
+.actions button, .actions a { min-width: 180px; }
+
+.blob {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: 60vw; height: 60vw; max-width: 600px;
+  background: radial-gradient(circle, var(--color-orange-bg) 0%, rgba(255, 240, 231, 0) 70%);
+  z-index: -1; /* Behind everything */
+  border-radius: 50%; opacity: 0.6; filter: blur(40px);
+  animation: pulse 6s infinite alternate ease-in-out;
+}
+
+@keyframes pulse {
+  0% { transform: translate(-50%, -50%) scale(1); }
+  100% { transform: translate(-50%, -50%) scale(1.1); }
+}
+
+@media (max-width: 1024px) {
+  .animationSide { display: none; }
+}
+
+@media (max-width: 768px) {
+  .actions { flex-direction: column; width: 100%; }
+  .actions button, .actions a { width: 100%; }
+  .title { font-size: var(--text-headline-xl); }
+}

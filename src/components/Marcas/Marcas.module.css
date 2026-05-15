@@ -1,0 +1,60 @@
+.marcas {
+  padding-block: var(--spacing-xxl);
+  background-color: var(--color-grey-fa);
+  overflow: hidden;
+}
+
+.title {
+  text-align: center;
+  
+  margin-bottom: var(--spacing-xl);
+}
+
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.marqueeContent {
+  display: flex;
+  width: max-content;
+  animation: scroll 40s linear infinite;
+}
+
+.marqueeContent:hover {
+  animation-play-state: paused;
+}
+
+.logoWrapper {
+  margin: 0 var(--spacing-xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  width: 140px;
+}
+
+.logo {
+  max-width: 100%;
+  max-height: 50px;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+
+.logo:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}

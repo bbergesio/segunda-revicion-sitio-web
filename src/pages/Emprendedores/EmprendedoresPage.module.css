@@ -1,0 +1,213 @@
+.page {
+  padding-top: 80px;
+}
+
+/* Hero */
+.hero {
+  padding-block: var(--spacing-xxl);
+  background-color: var(--color-white);
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: var(--spacing-xxl);
+  align-items: center;
+}
+
+.heroText h1 {
+  margin-bottom: var(--spacing-m);
+}
+
+.heroText > p {
+  margin-bottom: var(--spacing-xl);
+  color: var(--color-grey-4f);
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-l);
+}
+
+.featureItem {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.featureHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-orange-default);
+}
+
+.featureIcon {
+  font-size: 24px;
+  display: flex;
+}
+
+.featureItem p {
+  color: var(--color-grey-4f);
+  font-size: 14px;
+}
+
+.heroImageContainer {
+  position: relative;
+}
+
+.heroImg {
+  width: 100%;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+}
+
+/* Soluciones */
+.soluciones {
+  padding-block: var(--spacing-xxl);
+  background-color: var(--color-grey-fa);
+}
+
+.sectionHeader {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto var(--spacing-xl);
+}
+
+.soluGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-l);
+}
+
+.soluCard {
+  padding: var(--spacing-xl);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-m);
+}
+
+.soluIcon {
+  color: var(--color-orange-default);
+}
+
+.soluActions {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-m);
+  margin-top: var(--spacing-xl);
+}
+
+/* Explicación Puntos */
+.puntosExplicacion {
+  padding-block: var(--spacing-xl);
+  background-color: var(--color-white);
+  text-align: center;
+}
+
+.puntosContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Integrate */
+.integrate {
+  padding-block: var(--spacing-xxl);
+  background-color: var(--color-white);
+}
+
+.integrateCard {
+  background-color: var(--color-blue-secondary);
+  color: var(--color-white);
+  padding: var(--spacing-xxl);
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.integrateCard h2 {
+  color: var(--color-white);
+  margin-bottom: var(--spacing-m);
+}
+
+.integrateCard p {
+  color: var(--color-grey-97);
+  margin-bottom: var(--spacing-xl);
+}
+
+.integrateActions {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-m);
+}
+
+/* Atencion */
+.atencion {
+  padding-block: var(--spacing-xxl);
+  background-color: var(--color-grey-fa);
+}
+
+.atencionHeader {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto var(--spacing-xl);
+}
+
+.atencionGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-l);
+}
+
+.atencionCard {
+  padding: var(--spacing-xl);
+}
+
+.benefitsList {
+  list-style: none;
+  margin-top: var(--spacing-m);
+}
+
+.benefitsList li {
+  padding-left: 24px;
+  position: relative;
+  margin-bottom: 12px;
+  color: var(--color-grey-4f);
+}
+
+.benefitsList li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--color-orange-default);
+  font-weight: 700;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .heroGrid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .featuresGrid {
+    justify-items: center;
+  }
+  
+  .soluGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .featuresGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .soluActions, .integrateActions {
+    flex-direction: column;
+  }
+}

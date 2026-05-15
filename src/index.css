@@ -1,0 +1,359 @@
+/* ============================================================
+   PICKIT DESIGN SYSTEM — index.css
+   Based on SKILL.md brand guidelines
+   ============================================================ */
+
+/* Google Fonts: Mulish */
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200;400;500;700;800&display=swap');
+
+/* ============================================================
+   CSS CUSTOM PROPERTIES (DESIGN TOKENS)
+   ============================================================ */
+:root {
+  /* --- Primary Brand Colors --- */
+  --color-orange-default:    #FF6C0E;
+  --color-orange-hover:      #DB5600;
+  --color-orange-pressed:    #A84200;
+  --color-orange-bg:         #FFF0E7;
+
+  /* --- Secondary Brand Colors --- */
+  --color-blue-secondary:    #00B2E3;
+  --color-blue-secondary-hover: #008CB2;
+
+  /* --- Success --- */
+  --color-green-default:     #04CE6D;
+  --color-green-hover:       #039B52;
+  --color-green-pressed:     #026938;
+  --color-green-bg:          #E6FAF0;
+
+  /* --- Error --- */
+  --color-red-default:       #FF1515;
+  --color-red-hover:         #E00000;
+  --color-red-pressed:       #AD0000;
+  --color-red-bg:            #FFE8E8;
+
+  /* --- Warning --- */
+  --color-yellow-default:    #FFA825;
+  --color-yellow-hover:      #F09000;
+  --color-yellow-pressed:    #BD7100;
+  --color-yellow-bg:         #FFF6E9;
+
+  /* --- Information --- */
+  --color-blue-info:         #338AF3;
+  --color-blue-info-hover:   #0E70E7;
+  --color-blue-info-pressed: #0B59B7;
+  --color-blue-info-bg:      #EBF3FE;
+
+  /* --- Neutral Colors --- */
+  --color-black:             #000000;
+  --color-grey-2d:           #2D2D2D;
+  --color-grey-4d:           #4D4D4D;
+  --color-grey-b8:           #B8B8B8;
+  --color-grey-f0:           #F0F0F0;
+  --color-grey-fa:           #FAFAFA;
+  --color-white:             #FFFFFF;
+
+  /* --- Typography --- */
+  --font-family-base:        'Mulish', sans-serif;
+
+  /* Headline sizes */
+  --text-headline-xxl:       3rem;      /* 48px */
+  --text-headline-xl:        2.5rem;    /* 40px */
+  --text-headline-l:         2rem;      /* 32px */
+  --text-headline-m:         1.5rem;    /* 24px */
+  --text-headline-s:         1.25rem;   /* 20px */
+
+  /* Body sizes */
+  --text-body-xl:            1.25rem;   /* 20px */
+  --text-body-l:             1rem;      /* 16px */
+  --text-body-m:             0.875rem;  /* 14px */
+  --text-body-s:             0.75rem;   /* 12px */
+
+  /* Caption / Overline */
+  --text-caption-m:          1rem;      /* 16px */
+  --text-overline-l:         0.875rem;  /* 14px */
+  --text-overline-m:         0.75rem;   /* 12px */
+  --text-overline-s:         0.625rem;  /* 10px */
+
+  /* Button sizes */
+  --text-button-lm:          1rem;      /* 16px */
+  --text-button-s:           0.875rem;  /* 14px */
+
+  /* Font weights */
+  --fw-light:                200;
+  --fw-regular:              400;
+  --fw-bold:                 500;
+  --fw-extrabold:            700;
+  --fw-black:                800;
+
+  /* Letter spacing */
+  --letter-spacing-base:     0.0025em; /* 0.25% */
+
+  /* --- Shadows --- */
+  --shadow-elevated-1: 0 4px 8px 0 rgba(79, 94, 113, 0.10);
+  --shadow-elevated-2: 0 16px 32px 0 rgba(79, 94, 113, 0.09);
+  --shadow-elevated-3: 0 8px 16px 0 rgba(79, 94, 113, 0.09);
+  --shadow-elevated-4: 0 16px 32px 0 rgba(79, 94, 113, 0.08);
+
+  /* --- Spacing --- */
+  --spacing-xs:    8px;
+  --spacing-s:     16px;
+  --spacing-m:     24px;
+  --spacing-l:     32px;
+  --spacing-xl:    48px;
+  --spacing-xxl:   64px;
+  --spacing-xxxl:  80px;
+  --spacing-giant: 96px;
+
+  /* --- Grid Margins --- */
+  --grid-margin-xl: 192px;
+  --grid-margin-l:  64px;
+  --grid-margin-m:  48px;
+  --grid-margin-s:  16px;
+  --grid-gutter:    12px;
+}
+
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-family-base);
+  font-size: var(--text-body-l);
+  font-weight: var(--fw-regular);
+  color: var(--color-grey-2d);
+  background-color: var(--color-grey-fa);
+  line-height: 1.6;
+  letter-spacing: var(--letter-spacing-base);
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  font-family: var(--font-family-base);
+  border: none;
+  background: none;
+}
+
+/* ============================================================
+   LAYOUT UTILITIES
+   ============================================================ */
+.container {
+  width: 100%;
+  padding-inline: var(--grid-margin-xl);
+}
+
+@media (max-width: 1280px) {
+  .container {
+    padding-inline: var(--grid-margin-l);
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding-inline: var(--grid-margin-m);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-inline: var(--grid-margin-s);
+  }
+}
+
+/* ============================================================
+   TYPOGRAPHY UTILITIES
+   ============================================================ */
+.headline-xxl {
+  font-size: var(--text-headline-xxl);
+  font-weight: var(--fw-black);
+  color: #6B6B6B;
+  letter-spacing: var(--letter-spacing-base);
+  line-height: 1.15;
+}
+
+.headline-xl {
+  font-size: var(--text-headline-xl);
+  font-weight: var(--fw-black);
+  color: #6B6B6B;
+  letter-spacing: var(--letter-spacing-base);
+  line-height: 1.2;
+}
+
+.headline-l {
+  font-size: var(--text-headline-l);
+  font-weight: var(--fw-black);
+  color: #6B6B6B;
+  letter-spacing: var(--letter-spacing-base);
+  line-height: 1.25;
+}
+
+.headline-m {
+  font-size: var(--text-headline-m);
+  font-weight: var(--fw-black);
+  color: #6B6B6B;
+  letter-spacing: var(--letter-spacing-base);
+  line-height: 1.3;
+}
+
+.headline-s {
+  font-size: var(--text-headline-s);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--letter-spacing-base);
+  line-height: 1.4;
+}
+
+.body-xl { font-size: var(--text-body-xl); font-weight: var(--fw-light); }
+.body-l  { font-size: var(--text-body-l);  font-weight: var(--fw-light); }
+.body-m  { font-size: var(--text-body-m);  font-weight: var(--fw-light); }
+.body-s  { font-size: var(--text-body-s);  font-weight: var(--fw-light); }
+
+.overline-l {
+  font-size: var(--text-overline-l);
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.overline-m {
+  font-size: var(--text-overline-m);
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ============================================================
+   BUTTON COMPONENTS
+   ============================================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+  padding: 12px var(--spacing-l);
+  font-size: var(--text-button-lm);
+  font-weight: var(--fw-bold);
+  font-family: var(--font-family-base);
+  letter-spacing: var(--letter-spacing-base);
+  border-radius: 8px;
+  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
+  cursor: pointer;
+  border: none;
+  white-space: nowrap;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+/* Primary */
+.btn-primary {
+  background-color: var(--color-orange-default);
+  color: var(--color-white);
+}
+.btn-primary:hover {
+  background-color: var(--color-orange-hover);
+  box-shadow: var(--shadow-elevated-2);
+}
+.btn-primary:active {
+  background-color: var(--color-orange-pressed);
+}
+
+/* Secondary */
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-orange-default);
+  border: 1.5px solid var(--color-orange-default);
+}
+.btn-secondary:hover {
+  background-color: var(--color-orange-bg);
+}
+.btn-secondary:active {
+  color: var(--color-orange-pressed);
+  border-color: var(--color-orange-pressed);
+}
+
+/* Tertiary / Minimal */
+.btn-tertiary {
+  background-color: transparent;
+  color: var(--color-blue-secondary);
+  padding-inline: var(--spacing-xs);
+}
+.btn-tertiary:hover {
+  color: var(--color-blue-secondary-hover);
+}
+
+/* Small variant */
+.btn-sm {
+  font-size: var(--text-button-s);
+  padding: 8px var(--spacing-m);
+}
+
+/* ============================================================
+   CARD BASE
+   ============================================================ */
+.card {
+  background: var(--color-white);
+  border-radius: 12px;
+  box-shadow: var(--shadow-elevated-1);
+  padding: var(--spacing-l);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-elevated-2);
+  transform: translateY(-2px);
+}
+
+/* ============================================================
+   MICRO-ANIMATIONS
+   ============================================================ */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
