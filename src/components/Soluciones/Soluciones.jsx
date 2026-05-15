@@ -1,41 +1,50 @@
 import { Link } from 'react-router-dom';
-import { RiBuilding2Line, RiTruckLine, RiStore2Line, RiMapPinLine, RiFlashlightLine, RiFlashlightFill, RiRefund2Line } from 'react-icons/ri';
+import { RiFlashlightFill } from 'react-icons/ri';
 import styles from './Soluciones.module.css';
+
+// Import images from src/pages/Home
+import imgWarehouse from '../../pages/Home/Warehouse_&_Fulfillment.svg';
+import imgDomicilio from '../../pages/Home/Envío_a_Domicilio.svg';
+import imgRetiro from '../../pages/Home/Retiro_en_punto.svg';
+import imgDespacho from '../../pages/Home/Puntos_de_Despacho.svg';
+import imgFintech from '../../pages/Home/Envío_Fintech_en_el_día.svg';
+import imgDevoluciones from '../../pages/Home/Gestión_de_Devoluciones.svg';
+import imgMeliFlex from '../../pages/Home/SameDay_MeliFlex.svg';
 
 const soluciones = [
   {
-    icon: <RiBuilding2Line size={32} />,
+    image: imgWarehouse,
     title: "Warehouse & Fulfillment",
-    description: "Optimizamos tiempos y costos mediante tecnología para la recolección, almacenamiento y preparación de tus pedidos. Además, nos encargamos de conectar la distribución hasta el domicilio."
+    description: "Optimizamos tiempos y costos con tecnología para el almacenaje y preparación de pedidos. Conectamos toda tu operación hasta la entrega final en el domicilio del cliente."
   },
   {
-    icon: <RiTruckLine size={32} />,
-    title: "Domicilio",
-    description: "Optimizamos las rutas para lograr entregas más eficientes, lo que se traduce en una reducción de costos y un aumento de la efectividad. Realizamos dos intentos de entrega; si el comprador no se encuentra, el paquete se deposita en el punto pickit más cercano para que pueda ser retirado a su conveniencia."
+    image: imgDomicilio,
+    title: "Envío a Domicilio",
+    description: "Eficiencia en rutas para reducir costos y maximizar entregas. Realizamos dos visitas; si no hay contacto, el paquete aguarda en el punto pickit más cercano para su retiro."
   },
   {
-    icon: <RiStore2Line size={32} />,
-    title: "Retiro en punto",
-    description: "Brinda mayor flexibilidad y garantiza un 99% de efectividad en las entregas. Los compradores seleccionan el punto de retiro más conveniente y recogen su paquete en el momento que deseen."
+    image: imgRetiro,
+    title: "Retiro en Punto",
+    description: "Brinda flexibilidad con un 99% de efectividad. Los compradores eligen el punto más conveniente para recoger sus paquetes en el horario que mejor se adapte a su rutina diaria."
   },
   {
-    icon: <RiMapPinLine size={32} />,
-    title: "Puntos de despacho",
-    description: "Enfocado para marketplace que buscan optimizar costos en la primera milla, contamos con una red de puntos estratégicamente distribuida para que tus vendedores puedan acercar sus productos cuándo quieran."
+    image: imgDespacho,
+    title: "Puntos de Despacho",
+    description: "Ideal para marketplaces que buscan optimizar la primera milla. Ofrecemos una red estratégica de puntos para que los vendedores entreguen sus productos con total libertad."
   },
   {
-    icon: <RiFlashlightLine size={32} />,
-    title: "Envíos en el día",
-    description: "Gracias al almacenamiento de tus productos en nuestros puntos pickit tus clientes reciben su compra en 24 horas en la puerta de su hogar."
+    image: imgFintech,
+    title: "Envío Fintech en el día",
+    description: "Diseñado para servicios financieros: almacenamos tus plásticos y productos en nuestra red para que tus clientes los reciban en 24 horas, en cualquier lugar y con total seguridad."
   },
   {
-    icon: <RiFlashlightFill size={32} color="var(--color-yellow-default)" />,
-    title: "Meli Flex",
-    description: "Tus envíos llegan hoy. Gestionamos de forma integral toda tu operación para que lleguen en el día."
+    image: imgMeliFlex,
+    title: "Same Day / Meli Flex",
+    description: "Gracias a nuestras entregas en el día, tus clientes reciben sus compras en la puerta de su hogar de forma rápida y simple. Gestionamos toda la operación para garantizar inmediatez."
   },
   {
-    icon: <RiRefund2Line size={32} />,
-    title: "Devoluciones",
+    image: imgDevoluciones,
+    title: "Gestión de Devoluciones",
     description: "Potencia tu experiencia de compra ofreciendo devolver tus productos en puntos pickit. Te brindamos completa visibilidad del trayecto."
   }
 ];
@@ -43,11 +52,21 @@ const soluciones = [
 const Soluciones = () => {
   return (
     <section className={styles.soluciones} id="soluciones">
-      <div className="container">
+      {/* Animated Particles Background */}
+      <div className={styles.particlesContainer}>
+        <div className={styles.particle}></div>
+        <div className={styles.particle}></div>
+        <div className={styles.particle}></div>
+        <div className={styles.particle}></div>
+        <div className={styles.particle}></div>
+        <div className={styles.particle}></div>
+      </div>
+
+      <div className="container" style={{ position: 'relative', zIndex: 2 }}>
         <div className={styles.header}>
           <h2 className="headline-l">Soluciones</h2>
           <p className="body-l">
-            Gracias a nuestra red de puntos ofrecemos múltiples opciones, combinando Efectividad y Flexibilidad para optimizar la experiencia del cliente.
+            Gracias a nuestra red de puntos ofrecemos múltiples opciones, combinando efectividad y flexibilidad para optimizar la experiencia del cliente.
           </p>
         </div>
 
@@ -55,7 +74,11 @@ const Soluciones = () => {
           {soluciones.map((item, index) => (
             <div key={index} className={`card ${styles.card}`}>
               <div className={styles.iconContainer}>
-                {item.icon}
+                {item.image ? (
+                  <img src={item.image} alt={item.title} className={styles.iconImage} />
+                ) : (
+                  item.icon
+                )}
               </div>
               <h3 className="headline-s">{item.title}</h3>
               <p className="body-m">{item.description}</p>
@@ -64,7 +87,7 @@ const Soluciones = () => {
         </div>
 
         <div className={styles.actions}>
-          <Link to="/emprendedores" className="btn btn-primary">Emprendedores</Link>
+          <Link to="/emprendedores" className="btn btn-primary">Soy emprendedor</Link>
           <Link to="/empresas" className="btn btn-secondary">Empresas</Link>
         </div>
       </div>

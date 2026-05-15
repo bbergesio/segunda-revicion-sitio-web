@@ -13,7 +13,7 @@ const Footer = () => {
         <div className={styles.top}>
           {/* Column 1: Logo and Social */}
           <div className={styles.brand}>
-            <img src={logoBlanco} alt="Pickit Logo" className={styles.logo} />
+            <img src={logoBlanco} alt="pickit logo" className={styles.logo} />
             <div className={styles.social}>
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="Facebook">
                 <FaFacebookF />

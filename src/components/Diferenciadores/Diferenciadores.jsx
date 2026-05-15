@@ -4,28 +4,23 @@ import styles from './Diferenciadores.module.css';
 const diferencias = [
   {
     icon: <RiMagicLine size={40} />,
-    title: "Flexible",
-    description: "Mejoramos la experiencia del usuario. Los compradores tienen mayor autonomía para retirar sus paquetes cuándo y dónde quieran."
+    title: "Flexibilidad",
+    description: "Autonomía total para retirar paquetes dónde y cuándo el usuario prefiera."
   },
   {
     icon: <RiSpeedUpLine size={40} />,
-    title: "Simple",
-    description: "Podrás unificar y automatizar procesos en nuestro panel de Tiendanube o aplicativo para ventas por redes sociales."
+    title: "Simplicidad",
+    description: "Integración vía eCommerce, API o desarrollo propio según tu necesidad."
   },
   {
     icon: <RiMoneyDollarCircleLine size={40} />,
-    title: "Eficiente",
-    description: "Ahorra en costos logísticos con la distribución estratégica de nuestros puntos."
+    title: "Eficiencia",
+    description: "Reducción de costos mediante nuestra red estratégica de puntos."
   },
   {
     icon: <RiTimerLine size={40} />,
-    title: "Ágil",
-    description: "Entregamos 1 paquete cada 3 segundos."
-  },
-  {
-    icon: <RiLeafLine size={40} />,
-    title: "Sustentable",
-    description: "Ofrece alternativas eco-amigables mejorando el impacto ambiental de tu empresa."
+    title: "Agilidad",
+    description: "Velocidad operativa real: entregamos un paquete cada tres segundos."
   }
 ];
 

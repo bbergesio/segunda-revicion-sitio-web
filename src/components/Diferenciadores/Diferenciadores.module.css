@@ -1,6 +1,6 @@
 .diferenciadores {
   padding-block: var(--spacing-giant);
-  background-color: var(--color-white);
+  background-color: #FFF0E7; /* Light orange background requested */
 }
 
 .header {
@@ -14,19 +14,20 @@
 }
 
 .header h2 {
-  
+  color: var(--color-black);
 }
 
 .grid {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: var(--spacing-xl);
+  flex-direction: row; /* Benefit side by side */
+  justify-content: space-between;
+  gap: var(--spacing-l);
+  max-width: 1200px;
+  margin-inline: auto;
 }
 
 .item {
-  flex: 1 1 300px;
-  max-width: 350px;
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,33 +36,56 @@
 }
 
 .iconWrapper {
-  color: var(--color-blue-info);
-  background-color: var(--color-blue-info-bg);
-  width: 80px;
-  height: 80px;
+  color: var(--color-orange-default); /* Changed to orange to match theme */
+  background-color: var(--color-white); /* White background for icons on light orange */
+  width: 70px;
+  height: 70px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
   margin-bottom: var(--spacing-l);
-  transition: transform 0.3s ease;
+  box-shadow: 0 4px 12px rgba(255, 107, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .item:hover .iconWrapper {
-  transform: translateY(-8px);
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(255, 107, 0, 0.2);
 }
 
 .item h3 {
-  color: var(--color-grey-2d);
+  color: var(--color-black);
+  font-size: var(--text-headline-s);
   margin-bottom: var(--spacing-s);
+  font-weight: 700;
 }
 
 .item p {
   color: var(--color-grey-4d);
+  font-size: var(--text-body-m);
+  line-height: 1.5;
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .item {
+    flex: 1 1 30%; /* 3 items per row on tablet */
+    max-width: 33%;
+  }
 }
 
 @media (max-width: 768px) {
+  .grid {
+    flex-direction: column;
+    align-items: center;
+  }
   .item {
     flex: 1 1 100%;
+    max-width: 100%;
+    padding-bottom: var(--spacing-xl);
   }
 }

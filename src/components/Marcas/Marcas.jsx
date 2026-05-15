@@ -9,7 +9,7 @@ import meli from '../../assets/Empresas_Naranja/MELI_orange.svg';
 import mp from '../../assets/Empresas_Naranja/MP_orange.svg';
 import natura from '../../assets/Empresas_Naranja/Natura_orange.svg';
 import nespresso from '../../assets/Empresas_Naranja/Nespresso_orange.svg';
-import nike from '../../assets/Empresas_Naranja/Nike_orange.svg';
+import nike from '../../pages/Home/Nike.svg';
 import sony from '../../assets/Empresas_Naranja/Sony_orange.svg';
 import falabella from '../../assets/Empresas_Naranja/falabella_orange.svg';
 
@@ -21,7 +21,7 @@ const Marcas = () => {
   return (
     <section className={styles.marcas}>
       <div className="container">
-        <h2 className={`headline-m ${styles.title}`}>Marcas que nos eligen</h2>
+        <h2 className={`headline-l ${styles.title}`}>Marcas que nos eligen</h2>
       </div>
       
       <div className={styles.marquee}>

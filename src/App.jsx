@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Hero from './components/Hero/Hero';
+import VideoBanner from './components/VideoBanner/VideoBanner';
 import Soluciones from './components/Soluciones/Soluciones';
 import Resultados from './components/Resultados/Resultados';
 import Diferenciadores from './components/Diferenciadores/Diferenciadores';
@@ -18,11 +19,13 @@ import PrivacidadPage from './pages/Legales/PrivacidadPage';
 import TerminosPage from './pages/Legales/TerminosPage';
 import BlogPage from './pages/Blog/BlogPage';
 import Footer from './components/Footer/Footer';
+import FloatingWhatsApp from './components/FloatingWhatsApp/FloatingWhatsApp';
 import './App.css';
 
 const LandingPage = () => (
   <>
     <Hero />
+    <VideoBanner />
     <Soluciones />
     <Resultados />
     <Diferenciadores />
@@ -36,7 +39,7 @@ const LandingPage = () => (
 
 function App() {
   return (
-    <Router>
+    <Router basename="/segunda-revicion-sitio-web/">
       <div className="app">
         <Header />
         <main>
@@ -53,6 +56,7 @@ function App() {
           </Routes>
         </main>
         <Footer />
+        <FloatingWhatsApp />
       </div>
     </Router>
   );

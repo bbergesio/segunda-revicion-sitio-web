@@ -1,22 +1,27 @@
 import { Link } from 'react-router-dom';
-import { HiArrowRight } from 'react-icons/hi';
 import styles from './Sustentabilidad.module.css';
+import logoPacto from '../../pages/Home/Pacto global.svg';
 
 const Sustentabilidad = () => {
   return (
     <section className={styles.sustentabilidad}>
       <div className="container">
-        <Link to="/sustentabilidad" className={styles.banner}>
+        <div className={styles.banner}>
           <div className={styles.content}>
-            <div className={styles.text}>
-              <h2 className="headline-m">Logística sustentable es posible.</h2>
-              <p className="body-m">Conocé nuestra estrategia 2030 herramientas y resultados ambientales.</p>
-            </div>
-            <div className={styles.icon}>
-              <HiArrowRight size={32} />
-            </div>
+            <h2 className={styles.title}>Logística sustentable es posible</h2>
+            <ul className={styles.descriptionList}>
+              <li>Estrategia 2030</li>
+              <li>Reporte de sustentabilidad</li>
+              <li>Código de proveedores</li>
+            </ul>
+            <Link to="/sustentabilidad" className={styles.cta}>
+              Ver más
+            </Link>
           </div>
-        </Link>
+          <div className={styles.imageContainer}>
+            <img src={logoPacto} alt="Pacto Global" className={styles.logoImage} />
+          </div>
+        </div>
       </div>
     </section>
   );
