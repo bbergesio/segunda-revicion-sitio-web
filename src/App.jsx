@@ -39,7 +39,7 @@ const LandingPage = () => (
 
 function App() {
   return (
-    <Router basename="/segunda-revicion-sitio-web/">
+    <Router basename={import.meta.env.BASE_URL}>
       <div className="app">
         <Header />
         <main>
